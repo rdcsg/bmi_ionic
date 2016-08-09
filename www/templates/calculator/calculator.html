@@ -3,14 +3,16 @@
     <div class="row">
       <div class="col">
         <p>
-          Check your obesity level and figure out whether you are in the normal range by using this calculator to find your body mass index value (BMI value).
-          <ion-toggle ng-model="data.toggle">Are you using imperial values?</ion-toggle>
+          <p>
+            Check your obesity level and figure out whether you are in the normal weight range. Calculate your body mass index value (BMI value).
+          </p>
+          <ion-toggle ng-model="data.toggle" ng-change="setMeasurementUnit()">Use imperial measurement units</ion-toggle>
           <div class="list">
             <label class="item item-input">
-              <input type="number" class="item item-input" placeholder="weight" ng-model="data.weight">
+              <input type="number" class="item item-input" placeholder="{{placeholder.weight}}" ng-model="data.weight">
             </label>
             <label class="item item-input">
-              <input type="number" class="item item-input" placeholder="height" ng-model="data.height">
+              <input type="number" class="item item-input" placeholder="{{placeholder.height}}" ng-model="data.height">
             </label>
             <button class="button button-full button-calm" ng-click="calculateBMI()">Calculate</button>
           </div>
@@ -19,9 +21,9 @@
               BMI Calculation
             </div>
             <div class="item item-text-wrap">
-              <p>Person: Weight {{person.weight}}, Height {{person.height}}</p>
-              <p>BMI: {{person.bmiValue}}</p>
-              <p><strong>You are a {{person.bmiMessage}}</strong></p>
+              <p>Your weight is {{person.weight}} {{units.weight}} and your height is {{person.height}} {{units.height}},</p>
+              <p>which gives you a BMI-value of {{person.bmiValue}}.</p>
+              <p><strong>You are {{person.bmiMessage}}.</strong></p>
             </div>
           </div>
         </p>
