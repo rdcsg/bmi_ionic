@@ -39,7 +39,32 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   })
 
 
+  // set the route to the calculator page
+    .state('tab.calculator', {
+      url: '/bmi-calculator',
+      views: {
+        'tab-calculator': {
+          templateUrl: 'templates/about/calculator.html',
+          controller: 'CalculatorController'
+        }
+      }
+    })
+
+
+  // set the route to the about page
+    .state('tab.about', {
+      url: '/about',
+      views: {
+        'tab-about': {
+          templateUrl: 'templates/about/about.html',
+          controller: 'AboutController'
+        }
+      }
+    })
+
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/calculator');
+  $urlRouterProvider.otherwise('/tab/about');
 
 });
