@@ -40,12 +40,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 
   // set the route to the calculator page
-    .state('tab.calculator', {
-      url: '/bmi-calculator',
+    .state('tab.bmi', {
+      url: '/bmi',
       views: {
-        'tab-calculator': {
+        'tab-bmi': {
           templateUrl: 'templates/about/calculator.html',
-          controller: 'CalculatorController'
+          controller: 'BMIController'
         }
       }
     })

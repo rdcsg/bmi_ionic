@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('CalculatorController', function ($scope) {
+.controller('BMIController', function ($scope) {
   $scope.data= {};
   $scope.calculateBMI = function () {
     var  person = new Person({
