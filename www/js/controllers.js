@@ -3,19 +3,17 @@ angular.module('starter.controllers', [])
 .controller('BMIController', function ($scope) {
   $scope.data= {};
   $scope.data.toggle = false;
-  /*$scope.$on("$ionicView.loaded", function(){ //initiate the placeholder values
-    setMeasurementUnit();
-    console.log("State Params: ", data.stateParams);
-  });*/
-  $scope.units = {   //initiate the placeholder values
-    weight: "kg",
-    height: "cm"
+  $scope.$on("$ionicView.loaded", function(){ // onLoad of the view, initiate the placeholder values
+    $scope.setMeasurementUnit();
+  });
+  $scope.updateToggleValues = function (){ // on switch toggle, replace measurement units
+    $scope.setMeasurementUnit();
+    if ( ( $scope.data.weight !== undefined ) || ( $scope.data.height !== undefined ) ) { // re-calculate the bmi when toggle is switched unless it's a view init
+      $scope.calculateBMI();
+    }
   };
-  $scope.placeholder = {    //initiate the placeholder values
-    weight: "Weight in " + $scope.units.weight,
-    height: "Height in " + $scope.units.height
-  };
-  $scope.setMeasurementUnit = function () {
+
+  $scope.setMeasurementUnit = function (){
     switch ($scope.data.toggle) {
       case false:
         $scope.units = {
@@ -33,11 +31,8 @@ angular.module('starter.controllers', [])
       weight: "Weight in " + $scope.units.weight,
       height: "Height in " + $scope.units.height
     };
-    // re-calculate the bmi when toggle is switched unless it's a page init
-    if ( $scope.units.weight !== "" && $scope.units.height !== "") {
-      calculateBMI();
-    }
   };
+
   $scope.calculateBMI = function () {
     var person = new Person({
         toggle: $scope.data.toggle,
