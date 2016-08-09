@@ -47,7 +47,7 @@ function setBMIMessage (obj, value) {
     obj.bmiMessage = "underweight";
   }
   if (obj.bmiValue >= 18.5 && obj.bmiValue < 25) {
-    obj.bmiMessage = "normal, neither overweight, nor underweight or obese";
+    obj.bmiMessage = "normal - neither overweight nor underweight";
   }
   if (obj.bmiValue >= 25 && obj.bmiValue < 30) {
     obj.bmiMessage = "overweight";
