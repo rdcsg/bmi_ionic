@@ -44,7 +44,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       url: '/bmi',
       views: {
         'tab-bmi': {
-          templateUrl: 'templates/about/calculator.html',
+          templateUrl: 'templates/calculator/calculator.html',
           controller: 'BMIController'
         }
       }
@@ -60,11 +60,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           controller: 'AboutController'
         }
       }
-    })
+  });
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/calculator');
   $urlRouterProvider.otherwise('/tab/about');
 
 });
