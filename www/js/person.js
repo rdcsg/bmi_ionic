@@ -1,16 +1,14 @@
-/*   ./src/person.js
-      Works together with ./src/bmi_calculator.js
-*/
-
-
 function Person(attr) {
   this.weight = attr.weight;
   this.height = attr.height;
-  this.toggle = attr.toggle;
-}
+};
 
-
-Person.prototype.calculate_bmi = function() {
+Person.prototype.calculate_bmi_met = function() {
   calculator = new BMICalculator();
-  calculator.find_bmi_of(this);
+  calculator.metric_bmi(this);
+};
+
+Person.prototype.calculate_bmi_imp = function() {
+  calculator = new BMICalculator();
+  calculator.imperial_bmi(this);
 };

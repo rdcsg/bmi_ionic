@@ -6,7 +6,7 @@
           Check your obesity level and figure out whether you are in the normal range by using this calculator to find your body mass index value (BMI value).
           <div class="list">
             <label class="item item-input">
-              <input type="number" class="item-item-input" placeholder="weight" ng-model="data.weight">
+              <input type="number" class="item item-input" placeholder="weight" ng-model="data.weight">
             </label>
             <label class="item item-input">
               <input type="number" class="item item-input" placeholder="height" ng-model="data.height">
@@ -18,15 +18,9 @@
               BMI Calculation
             </div>
             <div class="item item-text-wrap">
-              <p>
-                Person: Weight {{person.weight}}, Height {{person.height}}
-              </p>
-              <p>
-                BMI: {{person.bmiValue}}
-              </p>
-              <p>
-                <strong>You are a {{person.bmiMessage}}</strong>
-              </p>
+              <p>Person: Weight {{person.weight}}, Height {{person.height}}</p>
+              <p>BMI: {{person.bmiValue}}</p>
+              <p><strong>You are a {{person.bmiMessage}}</strong></p>
             </div>
           </div>
         </p>
